@@ -8,5 +8,6 @@ services:
       - database:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: example
+
 volumes:
   database:
