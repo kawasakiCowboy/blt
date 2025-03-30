@@ -1,7 +1,7 @@
 {
   "name": "blt2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "ws.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
