@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import {Room} from "./Room.js";
-import {User} from "./User.js";
+import {Room} from "./Room.ts";
+import {User} from "./User.ts";
 
 /**
  * @property {Map<String, Room>} list

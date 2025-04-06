@@ -1,8 +1,8 @@
 import express from "express";
 import {NewRoomHandler} from "../src/Sevices/NewRoomHandler.js";
-import {UserRepository} from "../src/Repository/UserRepository.js";
+import {UserRepository} from "../src/Repository/UserRepository.ts";
 import {RoomManager} from "../src/Game/RoomManager.js";
-import {User} from "../src/Game/User.js";
+import {User} from "../src/Game/User.ts";
 
 const server = express();
 

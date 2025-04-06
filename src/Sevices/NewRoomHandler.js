@@ -1,4 +1,4 @@
-import {User} from "../Game/User.js";
+import {User} from "../Game/User.ts";
 import {RoomManager} from "../Game/RoomManager.js";
 
 export class NewRoomHandler {

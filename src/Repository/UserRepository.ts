@@ -1,20 +1,13 @@
-import {User} from "../Game/User.js";
+import {User} from "../Game/User";
 
 export class UserRepository {
-    /**
-     * @type {Map<number, User>}
-     */
-    list;
+    list: Map<number,User>;
 
-    constructor(list) {
+    constructor(list: Map<number,User>) {
         this.list = list;
     }
 
-    /**
-     * @param {Number} id
-     * @returns {User}
-     */
-    findOrFail(id) {
+    findOrFail(id: number) {
         let user = this.list.get(id);
         if (user === undefined) {
             throw new Error(`user ${id} is not found`)
@@ -23,10 +16,7 @@ export class UserRepository {
         return user
     }
 
-    /**
-     * @param {User} user
-     */
-    createUser(user) {
+    createUser(user: User) {
         this.list.set(user.id, user)
     }
 }
