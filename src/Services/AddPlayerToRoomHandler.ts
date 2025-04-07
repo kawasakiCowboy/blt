@@ -1,7 +1,9 @@
-import {UserRepository} from "../Repository/UserRepository.ts";
+import {UserRepository} from "../Repository/UserRepository";
 
 export class AddPlayerToRoomHandler {
-    constructor(repository) {
+    repository: UserRepository;
+
+    constructor(repository: UserRepository) {
         this.repository = repository;
     }
 

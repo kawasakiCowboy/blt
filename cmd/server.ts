@@ -1,8 +1,8 @@
 import express from "express";
-import {NewRoomHandler} from "../src/Sevices/NewRoomHandler.js";
-import {UserRepository} from "../src/Repository/UserRepository.ts";
-import {RoomManager} from "../src/Game/RoomManager.js";
-import {User} from "../src/Game/User.ts";
+import {NewRoomHandler} from "../src/Services/NewRoomHandler";
+import {UserRepository} from "../src/Repository/UserRepository";
+import {RoomManager} from "../src/Game/RoomManager";
+import {User} from "../src/Game/User";
 
 const server = express();
 
@@ -28,8 +28,12 @@ server.post("/new-room", (req, res) => {
         res.send(roomManager.getAll())
 
     } catch (error) {
-        res.status(500)
-        res.send(error.message)
+        if (error instanceof  Error) {
+            res.status(500)
+            res.send(error.message)
+        } else {
+            console.error('Неизвестная ошибка', error);
+        }
     }
 })
 

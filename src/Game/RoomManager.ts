@@ -1,24 +1,20 @@
 import crypto from 'crypto';
-import {Room} from "./Room.ts";
-import {User} from "./User.ts";
+import {Room} from "./Room";
+import {User} from "./User";
 
-/**
- * @property {Map<String, Room>} list
- */
+
 export class RoomManager {
+    list: Map<string, Room>
     constructor() {
         this.list = new Map
     }
 
-    /**
-     * @param {User} user
-     * @returns {Room}
-     */
-    createRoom(user) {
+
+    createRoom(user: User): Room {
         const uuid = crypto.randomUUID();
         let room = new Room(uuid, [user]);
 
-        this.list.set(uuid, room)
+        this.list.set(uuid, room);
 
         return room;
     }

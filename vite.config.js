@@ -7,8 +7,12 @@ export default defineConfig({
         outDir: 'dist',
         emptyOutDir: true,
         lib: {
-            entry: 'cmd/index.ts',
-            fileName: 'index',
+            entry: {
+                index: 'cmd/index.ts',
+                server: 'cmd/server.ts',
+                ws: 'cmd/ws.ts'
+            },
+            fileName: (format, entryName) => `${entryName}.js`,
             formats: ['es'], // Важно: ES Modules
         },
         rollupOptions: {

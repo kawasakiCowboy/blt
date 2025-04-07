@@ -1,4 +1,4 @@
-import {RoomManager} from './Game/RoomManager.js'
+import {RoomManager} from './Game/RoomManager.ts'
 import {Room} from "./Game/Room.ts";
 
 let list = new RoomManager();
