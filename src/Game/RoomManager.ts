@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import { v4 as uuidv4 } from 'uuid';
 import {Room} from "./Room";
 import {User} from "./User";
 
@@ -11,7 +11,7 @@ export class RoomManager {
 
 
     createRoom(user: User): Room {
-        const uuid = crypto.randomUUID();
+        const uuid = uuidv4();
         let room = new Room(uuid, [user]);
 
         this.list.set(uuid, room);

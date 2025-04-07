@@ -1,3 +1,5 @@
+import {Sequelize} from "sequelize";
+
 const {Model, DataTypes} = require("sequelize");
 
 const sequelize = new Sequelize('postgres://postgres:example@localhost:5432/postgres') // Example for postgres
@@ -8,7 +10,9 @@ const checkConnection = async () => {
         await sequelize.authenticate();
         console.log('✅ Подключение к БД успешно!');
     } catch (error) {
-        console.error('❌ Ошибка подключения:', error.message);
+        if (error instanceof  Error) {
+            console.error('❌ Ошибка подключения:', error.message);
+        }
     }
 };
 
@@ -43,5 +47,5 @@ async function getUsers() {
 
 (async () => {
     const users = await getUsers();
-    users.forEach(user => console.log(user.name));
+    users.forEach((user:User) => console.log(user.name));
 })();
