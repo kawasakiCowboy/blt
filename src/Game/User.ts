@@ -1,13 +1,6 @@
-import {Room} from "./Room";
+import {Sequelize} from "sequelize";
 
-export class User {
+import {DataTypes, Model} from "sequelize";
 
-    id: number;
-    name: string;
-    room: Room | null = null;
+export class User extends Model {}
 
-    constructor(id: number, name: string) {
-        this.id = id;
-        this.name = name;
-    }
-}

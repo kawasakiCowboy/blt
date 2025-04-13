@@ -2,6 +2,13 @@ import {UserRepository} from "../src/Repository/UserRepository";
 import {User} from "../src/Game/User";
 import {UserRepositoryInterface} from "../src/Repository/UserRepositoryInterface";
 import {FakeUserRepository} from "../src/Repository/FakeUserRepository";
+import {ModelLoader} from "../src/Game/ModelLoader";
+import {Sequelize} from "sequelize";
+
+const sequelize = new Sequelize('postgres://postgres:example@localhost:5432/postgres'); // Example for postgres
+
+const modelLoader = new ModelLoader();
+modelLoader.load(sequelize);
 
 
 const newUserRepository = new UserRepository(new Map);
