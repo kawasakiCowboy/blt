@@ -1,6 +1,7 @@
 import {User} from "../Game/User";
+import {UserRepositoryInterface} from "./UserRepositoryInterface";
 
-export class UserRepository {
+export class UserRepository implements UserRepositoryInterface {
     list: Map<number,User>;
 
     constructor(list: Map<number,User>) {
@@ -16,7 +17,7 @@ export class UserRepository {
         return user
     }
 
-    createUser(user: User) {
+    addUser(user: User) {
         this.list.set(user.id, user)
     }
 }

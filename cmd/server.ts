@@ -8,7 +8,7 @@ const server = express();
 
 let userMap = new Map
 let userRepo = new UserRepository(userMap)
-userRepo.createUser(new User(123, "Hayk"))
+userRepo.addUser(new User(123, "Hayk"))
 
 let roomManager = new RoomManager();
 

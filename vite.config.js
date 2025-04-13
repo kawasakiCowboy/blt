@@ -12,7 +12,8 @@ export default defineConfig({
                 server: 'cmd/server.ts',
                 ws: 'cmd/ws.ts',
                 db: 'examples/db_example.ts',
-                room: 'examples/room_example.ts'
+                room: 'examples/room_example.ts',
+                animals: 'cmd/animals.ts'
             },
             fileName: (format, entryName) => `${entryName}.js`,
             formats: ['es'], // Важно: ES Modules
